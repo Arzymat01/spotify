@@ -25,6 +25,7 @@ class SignUpPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _registerText(),
+            const SizedBox(height: 50),
             _fullNameField(),
           ],
         ),
@@ -44,8 +45,6 @@ class SignUpPage extends StatelessWidget {
   }
 
   Widget _fullNameField() {
-    return TextField(
-      decoration: InputDecoration(),
-    );
+    return TextField();
   }
 }
