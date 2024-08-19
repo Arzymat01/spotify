@@ -45,6 +45,8 @@ class SignUpPage extends StatelessWidget {
   }
 
   Widget _fullNameField() {
-    return TextField();
+    return TextField(
+      decoration: InputDecoration(hintText: 'Full Name'),
+    );
   }
 }
