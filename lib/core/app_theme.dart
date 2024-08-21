@@ -11,6 +11,10 @@ class AppTheme {
       filled: true,
       fillColor: Colors.transparent,
       contentPadding: const EdgeInsets.all(30),
+      hintStyle: const TextStyle(
+          color: Color(0xff383838),
+          fontWeight: FontWeight.w500,
+        ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30),
         borderSide: const BorderSide(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/widgets/appbar/app_bar.dart';
+import 'package:spotify/common/widgets/button/basic_app.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -27,7 +28,12 @@ class SignUpPage extends StatelessWidget {
             _registerText(),
             const SizedBox(height: 50),
             _fullNameField(context),
-            _fullNameField(context),
+            const SizedBox(height: 20),
+            _emailField(context),
+            const SizedBox(height: 20),
+            _passwordField(context),
+            const SizedBox(height: 20),
+            BasicButton(onPressed: () {}, title: 'Create Account'),
           ],
         ),
       ),
@@ -47,8 +53,31 @@ class SignUpPage extends StatelessWidget {
 
   Widget _fullNameField(BuildContext context) {
     return TextField(
-      decoration: InputDecoration(hintText: 'Full Name')
-          .applyDefaults(Theme.of(context).inputDecorationTheme),
+      decoration: InputDecoration(
+        hintText: 'Full Name',
+      ).applyDefaults(Theme.of(context).inputDecorationTheme),
+    );
+  }
+
+  Widget _emailField(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: 'Enter Email',
+      ).applyDefaults(Theme.of(context).inputDecorationTheme),
+    );
+  }
+
+  Widget _passwordField(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: 'Password',
+      ).applyDefaults(Theme.of(context).inputDecorationTheme),
+    );
+  }
+
+  Widget _signText(BuildContext context) {
+    return Row(
+      children: [],
     );
   }
 }
