@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/common/widgets/button/basic_app.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
+import 'package:spotify/presentation/auth/pages/sigInPage.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -77,7 +78,7 @@ class SignUpPage extends StatelessWidget {
   }
 
   Widget _signText(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 30,
       ),
@@ -90,6 +91,17 @@ class SignUpPage extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const SignInPage(),
+                ),
+              );
+            },
+            child: Text('Sign In'),
           ),
         ],
       ),
