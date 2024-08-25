@@ -17,8 +17,8 @@ class AtuhFirebaseServiceImpl extends AtuthFirebaseService {
   Future<void> signUp(CreateUserReq createUserReq) async {
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: CreateUserReq.email,
-        password: CreateUserReq.password,
+        email: createUserReq.email,
+        password: createUserReq.password,
       );
     } on FirebaseAuthException catch (e) {}
   }
