@@ -8,6 +8,7 @@ import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/data/models/auth/create_user_req.dart';
 import 'package:spotify/domain/usecases/auth/signUp.dart';
 import 'package:spotify/presentation/auth/pages/sigInPage.dart';
+import 'package:spotify/presentation/root/pages/root.dart';
 import 'package:spotify/service_locator.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -57,7 +58,15 @@ class SignUpPage extends StatelessWidget {
                     var snackbar = SnackBar(content: Text(l));
                     ScaffoldMessenger.of(context).showSnackBar(snackbar);
                   },
-                  (r) {},
+                  (r) {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => const RootPage(),
+                      ),
+                      (route) => false,
+                    );
+                  },
                 );
               },
               title: 'Create Account',
